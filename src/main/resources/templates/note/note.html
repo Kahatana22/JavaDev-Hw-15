@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Створити нову нотатку</title>
+</head>
+<body>
+<form th:action="@{/note/create}" method="post">
+    <h2>Створити нову нотатку</h2>
+    <table>
+        <tr>
+            <td>
+                Заголовок:
+            </td>
+            <td>
+                <input id="title" name="title" maxlength="20" size="15">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Контент:
+            </td>
+            <td>
+                <input id="note" name="note" maxlength="20" size="15">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Зберегти"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

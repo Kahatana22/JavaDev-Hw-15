@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список нотаток</title>
+</head>
+<body>
+<div>
+    <h2>Список нотаток</h2>
+    <table th:each="note :${notes}">
+        <tr>
+            <td><a th:text="${note.getTitle()}"></a></td>
+            <td><a th:text="${note.getContent()}"></a></td>
+            <td>
+                <form method="GET" th:action="@{/note/edit}">
+                    <button name="id" th:value="${note.getId()}" type="submit">Редагувати</button>
+                </form>
+            </td>
+            <td>
+                <form method="post" th:action="@{/note/delete}">
+                    <button name="id" th:value="${note.getId()}" type="submit">Видалити</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <form method="GET" action="/note/create">
+        <button>Додати нотатку</button>
+    </form>
+</div>
+</body>
+</html>
